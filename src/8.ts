@@ -1,11 +1,25 @@
-async function squareAsync(n: number): Promise<number> {
-    if (n >= 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        return n * n;
-
+{
+    async function squareAsync(n: number): Promise<number> {
+        return new Promise((resolve, reject) => {
+            if (n>=0) {
+               setTimeout(() => {
+                resolve(n * n);
+               }, 1000);
+            }
+            else {
+                reject(new Error("Negative number not allowed"))
+            }
+        })
     }
-    throw new Error("Negative number not allowed");
+    
+    
+    
+    
+    
+    const hello = async () => {
+        const data = await squareAsync(-100);
+        console.log(data);
+    }
+    hello()
+    
 }
-
-squareAsync(4).then(console.log);        // Output after 1s: 16
-squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed

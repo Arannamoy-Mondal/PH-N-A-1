@@ -1,4 +1,5 @@
-enum Day {
+{
+  enum Day {
     Monday,
     Tuesday,
     Wednesday,
@@ -19,3 +20,4 @@ enum Day {
 
 console.log(getDayType(Day.Monday));
 console.log(getDayType(Day.Sunday));
+}
