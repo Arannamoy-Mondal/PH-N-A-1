@@ -12,7 +12,7 @@
         }
     }
     class Car extends Vehicle {
-         private model: string;
+        private model: string;
         constructor(make: string,year: number,model: string) {
             super(make, year);
             this.model = model;
